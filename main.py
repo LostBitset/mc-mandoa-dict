@@ -7,5 +7,5 @@ with open("capture.json", "r") as f:
     dat = json.load(f)
 
 dictionary = [ make_entry(i) for i in dat ]
-print(dictionary[1])
+print(dictionary[73])
 

@@ -1,6 +1,9 @@
 from entry import Word, RawEntry, Entry
 
 def make_entry(obj):
+    examples = []
+    if "Examples" in obj:
+        examples = obj["Examples"]
     return Entry(
         obj["type"],
         RawEntry({
@@ -13,6 +16,18 @@ def make_entry(obj):
                 obj["p"]
             )
         }),
-        []
+        [
+            RawEntry({
+                "english": Word(
+                    example["eng"],
+                    None
+                ),
+                "mando'a": Word(
+                    example["mandoa"],
+                    None
+                )
+            })
+            for example in examples
+        ]
     )
 
