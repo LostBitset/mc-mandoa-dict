@@ -3,8 +3,8 @@ import typing as t
 
 @dataclass
 class Word:
-    text: str
-    phon: str
+    text: str | None
+    phon: str | None
 
 @dataclass
 class RawEntry:
